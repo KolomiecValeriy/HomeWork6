@@ -1,0 +1,3 @@
+home_kolomiets_homepage:
+    path:     /
+    defaults: { _controller: HomeKolomietsBundle:Default:index }
