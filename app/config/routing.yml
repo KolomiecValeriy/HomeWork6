@@ -2,10 +2,6 @@ home_kolomiets:
     resource: "@HomeKolomietsBundle/Resources/config/routing.yml"
     prefix:   /
 
-home_work6_project:
-    resource: "@HomeWork6ProjectBundle/Resources/config/routing.yml"
-    prefix:   /
-
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
