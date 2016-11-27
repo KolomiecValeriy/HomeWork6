@@ -1,31 +1,27 @@
 home_kolomiets_homepage:
     path:     /
-    defaults: { _controller: HomeKolomietsBundle:Default:index }
+    defaults: { _controller: HomeKolomietsBundle:Parameter:withoutParam }
 
 home_kolomiets_withoutParam:
     path:     /without_param
     defaults: { _controller: HomeKolomietsBundle:Parameter:withoutParam }
 
 home_kolomiets_oneParam:
-    path:     /with_one_param/{one}
-    defaults: { _controller: HomeKolomietsBundle:Parameter:oneParam }
+    path:     /with_one_param/{slug}
+    defaults: { _controller: HomeKolomietsBundle:Parameter:oneParam, slug: 'DEFAULT' }
 
 home_kolomiets_twoParam:
     path:     /with_two_param/{one}/{two}
     defaults: { _controller: HomeKolomietsBundle:Parameter:twoParam }
 
-home_kolomiets_defaultParam:
-    path:     /with_default_param
-    defaults: { _controller: HomeKolomietsBundle:Parameter:defaultParam }
-
 home_kolomiets_requirementDigitalParam:
-    path:     /with_requirement/{param}
+    path:     /with_requirement/{slug}
     defaults: { _controller: HomeKolomietsBundle:Parameter:requirementDigitalParam }
     requirements:
-        param: '\d+'
+        slug: '\d+'
 
 home_kolomiets_requirementStringParam:
-    path:     /with_requirement/{param}
+    path:     /with_requirement/{slug}
     defaults: { _controller: HomeKolomietsBundle:Parameter:requirementStringParam }
     requirements:
-        param: '\D+'
+        slug: '\D+'

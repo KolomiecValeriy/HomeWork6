@@ -7,39 +7,53 @@ use Symfony\Component\HttpFoundation\Response;
 
 class ParameterController extends Controller
 {
+    /**
+     * @return Response
+     */
     public function withoutParamAction()
     {
         $response = new Response('Without parameters');
         return $response;
     }
 
-    public function oneParamAction($one)
+    /**
+     * @param $one
+     * @return Response
+     */
+    public function oneParamAction($slug)
     {
-        $response = new Response('With one \''.$one.'\' parameter');
+        $response = new Response('With one \''.$slug.'\' parameter');
         return $response;
     }
 
+    /**
+     * @param $one
+     * @param $two
+     * @return Response
+     */
     public function twoParamAction($one, $two)
     {
         $response = new Response('With two \''.$one.'\', \''.$two.'\' parameters');
         return $response;
     }
 
-    public function defaultParamAction($one = 'DEFAULT')
+    /**
+     * @param integer $param
+     * @return Response
+     */
+    public function requirementDigitalParamAction($slug)
     {
-        $response = new Response('With default \''.$one.'\' parameter');
+        $response = new Response('With requirement digital \''.$slug.'\' parameter');
         return $response;
     }
 
-    public function requirementDigitalParamAction($param)
+    /**
+     * @param string $param
+     * @return Response
+     */
+    public function requirementStringParamAction($slug)
     {
-        $response = new Response('With requirement digital \''.$param.'\' parameter');
-        return $response;
-    }
-
-    public function requirementStringParamAction($param)
-    {
-        $response = new Response('With requirement string \''.$param.'\' parameter');
+        $response = new Response('With requirement string \''.$slug.'\' parameter');
         return $response;
     }
 }
